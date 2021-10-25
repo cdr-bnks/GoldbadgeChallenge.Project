@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02_Cafe.Repo
+namespace _05_Claims.Repo
 {
-    public class Class1
+    public class ClaimsRepo
     {
     }
 }

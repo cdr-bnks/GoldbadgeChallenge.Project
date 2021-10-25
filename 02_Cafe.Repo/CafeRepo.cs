@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _08_Badges.Repo
+namespace _02_Cafe.Repo
 {
-    public class Class1
+    public class CafeRepo
     {
     }
 }
