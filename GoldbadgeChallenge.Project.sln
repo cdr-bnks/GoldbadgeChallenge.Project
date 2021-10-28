@@ -9,17 +9,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_Cafe.ClassLibrary", "02_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_Cafe.UnitTest", "03_Cafe.UnitTest\03_Cafe.UnitTest.csproj", "{AE86C5B5-C016-49D5-A521-64E4EEF000AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Claims.App", "04_Claims.App\04_Claims.App.csproj", "{5F74AD80-116C-40CF-86AD-8F42D94B6708}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Claim.App", "04_Claims.App\04_Claim.App.csproj", "{5F74AD80-116C-40CF-86AD-8F42D94B6708}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_Claims.ClassLibrary", "05_Claims.Repo\05_Claims.ClassLibrary.csproj", "{A5A6CBE4-EE21-41D3-8C08-25A510CA1D56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_Claim.ClassLibrary", "05_Claims.Repo\05_Claim.ClassLibrary.csproj", "{A5A6CBE4-EE21-41D3-8C08-25A510CA1D56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_Claims.UnitTest", "06_Claims.UnitTest\06_Claims.UnitTest.csproj", "{25E602B3-13F7-481C-93AC-B23B85317D3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_Claim.UnitTest", "06_Claims.UnitTest\06_Claim.UnitTest.csproj", "{25E602B3-13F7-481C-93AC-B23B85317D3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_Badges.App", "07_Badges.App\07_Badges.App.csproj", "{40A1EBAE-250D-4E48-AC35-60248FFE4CB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_Badge.App", "07_Badges.App\07_Badge.App.csproj", "{40A1EBAE-250D-4E48-AC35-60248FFE4CB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_Badges.ClassLibrary", "08_Badges.Repo\08_Badges.ClassLibrary.csproj", "{5CA7B591-2FB7-4B86-8CA3-8F31978621F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_Badge.ClassLibrary", "08_Badges.Repo\08_Badge.ClassLibrary.csproj", "{5CA7B591-2FB7-4B86-8CA3-8F31978621F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_Badges.UnitTest", "09_Badges.UnitTest\09_Badges.UnitTest.csproj", "{3F453623-74DE-4C01-8A83-A724F3992768}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_Badge.UnitTest", "09_Badges.UnitTest\09_Badge.UnitTest.csproj", "{3F453623-74DE-4C01-8A83-A724F3992768}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -6,7 +6,38 @@ using System.Threading.Tasks;
 
 namespace _05_Claims.Repo
 {
-    class Claim
+    public enum ClaimType
     {
+        Medical = 1,
+        Insurance,
+        Auto,
+        Home,
+        Theft
+    }
+    public class Claim
+    {
+        public int ClaimID { get; set; }
+        public ClaimType ClaimType { get; set; }
+        public  string Description { get; set; }
+        public  double ClaimAmount { get; set; }
+        public  System.DateTime DateOfIncident { get; set; }
+        public  System.DateTime DateOfClaim { get; set; }
+        public  bool  IsValid { get; set; } //30 days else not valid.
+
+        public Claim()
+        {
+
+        }
+
+        public Claim(int claimID, ClaimType claimType, string description, double claimAmount, System.DateTime dateOfIncident, System.DateTime dateOfClaim, bool isValid)
+        {
+            ClaimID = claimID;
+            ClaimType = claimType;
+            Description = description;
+            ClaimAmount = claimAmount;
+            DateOfIncident = dateOfIncident;
+            DateOfClaim = dateOfClaim;
+            IsValid = isValid;
+        }
     }
 }

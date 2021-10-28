@@ -23,12 +23,12 @@ namespace _02_Cafe.ClassLibrary
             return _menuList.Count > MenuCount;
         }
 
-        public List<Menu> GetAllItems()
+        public List<Menu> GetEveryItem()
         {
             return _menuList;
         }
 
-        public List<Ingredients> GetAllIngredients()
+        public List<Ingredients> GetEveryIngredient()
         {
             return _allIngredients;
         }
