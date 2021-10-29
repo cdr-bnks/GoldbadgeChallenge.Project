@@ -63,7 +63,7 @@ namespace _02_Cafe.Repo
             Description = description;
             Ingredients = ingredients;
             Price = price;
-            Rating = Rating;
+            Rating = rating;
             MealTime = mealTime;
         }
 
@@ -80,7 +80,7 @@ namespace _02_Cafe.Repo
         {
             Spice = spice;
             Vegetable = vegetable;
-            Measurement = Measurement;
+            Measurement = measurement;
         }
     }
 }
