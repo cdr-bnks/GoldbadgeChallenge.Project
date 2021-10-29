@@ -25,7 +25,7 @@ namespace _01_Cafe.App
                     "2.) Delete items:\n" +
                     "3.) Recieve a list of all items\n " +
                     "4.) Exit");
-                
+
                 string input = Console.ReadLine();
 
                 switch (input)
@@ -33,6 +33,7 @@ namespace _01_Cafe.App
                     case "1":
                         break;
                     case "2":
+                        DeleteItem();
                         break;
                     case "3":
                         break;
@@ -51,7 +52,10 @@ namespace _01_Cafe.App
         }
 
         private void CreateNewMenuItem() { }
-        private void Deleteitems() { }
+        private void DeleteItem()
+        {
+            List<Menu> itemlist = _
+        }
         private void GetItemList() { }
 
 

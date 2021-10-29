@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02_Cafe.Repo
+namespace _02_Cafe.ClassLibrary
 {
     //    The Menu Items:
     //A meal number, so customers can say "I'll have the #5"
