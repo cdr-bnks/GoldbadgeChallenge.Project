@@ -54,10 +54,7 @@ namespace _02_Cafe.Repo
             }
         }
 
-        public Menu()
-        {
-
-        }
+        public Menu(){ }
 
         public Menu(string mealName, MealNumber mealNumber, string description, List<Ingredients> ingredients, double price, double rating, System.DateTime mealTime)
         {
@@ -78,10 +75,7 @@ namespace _02_Cafe.Repo
         public string Vegetable { get; set; }
         public double Measurement { get; set; }
 
-        public Ingredients()
-        {
-
-        }
+        public Ingredients(){ }
         public Ingredients(string spice, string vegetable, double measurement)
         {
             Spice = spice;

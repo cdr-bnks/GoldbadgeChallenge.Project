@@ -24,10 +24,7 @@ namespace _05_Claims.Repo
         public  System.DateTime DateOfClaim { get; set; }
         public  bool  IsValid { get; set; } //30 days else not valid.
 
-        public Claim()
-        {
-
-        }
+        public Claim() { }
 
         public Claim(int claimID, ClaimType claimType, string description, double claimAmount, System.DateTime dateOfIncident, System.DateTime dateOfClaim, bool isValid)
         {

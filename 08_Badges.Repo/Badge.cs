@@ -12,10 +12,7 @@ namespace _08_Badge.ClassLibrary
         public string ListEachDoorName { get; set; }
         public string BadgeName { get; set; }
 
-        public Badge()
-        {
-
-        }
+        public Badge() { }
 
         public Badge(int badgeID, string listEachDoorName, string badgeName)
         {
