@@ -15,12 +15,15 @@ namespace _02_Cafe.ClassLibrary
     public class MenuRepo
     {
         private readonly List<Menu> _menuList = new List<Menu>();
-        private readonly List<Ingredients> _allIngredients = new List<Ingredients>();
-        public bool AddItemsToMenuList (Menu menu)
+        public readonly List<Ingredient> _allIngredients = new List<Ingredient>();
+        public readonly DateTime __cafehours = new DateTime(2021, 11, 1, 8, 30, 00);
+        public void AddItemsToMenuList (Menu menu, Ingredient ingredients, DateTime)
         {
-            int MenuCount = _menuList.Count;
+            
             _menuList.Add(menu);
-            return _menuList.Count > MenuCount;
+            _allIngredients.Add(ingredients);
+            
+            
         }
 
         public List<Menu> GetEveryItem()
@@ -28,7 +31,7 @@ namespace _02_Cafe.ClassLibrary
             return _menuList;
         }
 
-        public List<Ingredients> GetEveryIngredient()
+        public List<Ingredient> GetEveryIngredient()
         {
             return _allIngredients;
         }

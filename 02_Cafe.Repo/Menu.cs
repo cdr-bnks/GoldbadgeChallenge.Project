@@ -13,7 +13,7 @@ namespace _02_Cafe.ClassLibrary
     //A list of ingredients,
     //A price
     //Create a Menu Class with properties, constructors, and fields.
-    public enum MealNumber
+    public enum MealType
     {
         kids_meal = 1,
         single_meal,
@@ -25,12 +25,11 @@ namespace _02_Cafe.ClassLibrary
     }
     public class Menu
     {
-        public  MealNumber MealNumber { get; set; }
+        public  MealType TypeOfMeal { get; set; }
         public  string MealName { get; set; }
         public string Description { get; set; }
-        public List<Ingredients> Ingredients { get; set; }
+        public List<Ingredient> Ingredient { get; set; }
         public double Price { get; set; }
-        public double Rating { get; set; }
         public System.DateTime MealTime { get; set; }
         public bool MealValue
         {
@@ -39,15 +38,15 @@ namespace _02_Cafe.ClassLibrary
                 
 
 
-                switch (MealNumber)
+                switch (TypeOfMeal)
                 {
-                    case MealNumber.kids_meal:
-                    case MealNumber.single_meal:
-                    case MealNumber.family_meal:
-                    case MealNumber.a_la_carte:
-                    case MealNumber.extra_veggie:
-                    case MealNumber.extra_meat:
-                    case MealNumber.extra_sides:
+                    case MealType.kids_meal:
+                    case MealType.single_meal:
+                    case MealType.family_meal:
+                    case MealType.a_la_carte:
+                    case MealType.extra_veggie:
+                    case MealType.extra_meat:
+                    case MealType.extra_sides:
                     default:
                         return false;
                 }
@@ -56,31 +55,34 @@ namespace _02_Cafe.ClassLibrary
 
         public Menu(){ }
 
-        public Menu(string mealName, MealNumber mealNumber, string description, List<Ingredients> ingredients, double price, double rating, System.DateTime mealTime)
+        public Menu(string mealName, MealType mealNumber, string description, List<Ingredient> ingredient, double price, System.DateTime mealTime)
         {
             MealName = mealName;
-            MealNumber = mealNumber;
+            TypeOfMeal = mealNumber;
             Description = description;
-            Ingredients = ingredients;
+            Ingredient = ingredient;
             Price = price;
-            Rating = rating;
             MealTime = mealTime;
         }
 
     }
 
-    public class Ingredients
+    public class Ingredient
     {
         public string Spice { get; set; }
         public string Vegetable { get; set; }
-        public double Measurement { get; set; }
+        public string Meat { get; set; }
+        public string Dairy { get; set; }
+       
 
-        public Ingredients(){ }
-        public Ingredients(string spice, string vegetable, double measurement)
+        public Ingredient(){ }
+        public Ingredient(string spice, string vegetable, string meat, string dairy)
         {
             Spice = spice;
             Vegetable = vegetable;
-            Measurement = measurement;
+            Meat = meat;
+            Dairy = dairy;
+           
         }
     }
 }

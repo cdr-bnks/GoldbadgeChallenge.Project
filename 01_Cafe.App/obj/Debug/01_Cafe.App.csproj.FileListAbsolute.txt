@@ -5,3 +5,6 @@ C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\01_Cafe.App\bin\Debug\01_
 C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\01_Cafe.App\bin\Debug\01_Cafe.App.pdb
 C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\01_Cafe.App\obj\Debug\01_Cafe.App.exe
 C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\01_Cafe.App\obj\Debug\01_Cafe.App.pdb
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\01_Cafe.App\bin\Debug\02_Cafe.Repo.dll
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\01_Cafe.App\bin\Debug\02_Cafe.Repo.pdb
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\01_Cafe.App\obj\Debug\01_Cafe.App.csproj.CopyComplete
