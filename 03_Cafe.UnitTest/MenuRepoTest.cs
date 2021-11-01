@@ -13,7 +13,7 @@ namespace _03_Cafe.UnitTest
         private Menu _items;
         private List<Ingredient> _ingredientRepo;
         private Ingredient _ingredients;
-        private DateTime _mealhours;
+        
        
         [TestInitialize]
         public void IntialStep()
@@ -21,21 +21,22 @@ namespace _03_Cafe.UnitTest
             _menuRepo = new MenuRepo();
             _ingredientRepo = new List<Ingredient>();
             _ingredients = new Ingredient("black pepper", "celery", "turkey", "milk");
-            _mealhours = new DateTime(2021, 11, 1, 8, 30, 00);
+            
 
-            _items = new Menu("Kids special", MealType.kids_meal, "Fresh fruits, Organic deli meat, milk or water and pastries", _ingredientRepo, 5.78, _mealhours);
+            _items = new Menu("Kids special", MealType.kids_meal, "Fresh fruits, Organic deli meat, milk or water and pastries", _ingredientRepo, 5.78);
 
             _menuRepo.AddItemsToMenuList(_items, _ingredients);
 
         }
         [TestMethod]
-        public void AddtoCafeList_ShouldGetNotNull()
+        public void AddtoCafeList_ShouldReturnNotNull()
         {
             Menu item = new Menu();
             item.MealName = "Kids Special";
-
+            Ingredient ingredientItem = new Ingredient();
+            ingredientItem.Spice = "Black Pepper";
             MenuRepo repo = new MenuRepo();
-            repo.AddItemsToMenuList(item);
+            repo.AddItemsToMenuList(item, ingredientItem);
             Menu itemFromDirectory = repo.GetMealName("Kids Special");
 
             Assert.IsNotNull(itemFromDirectory);
