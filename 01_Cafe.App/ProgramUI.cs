@@ -36,7 +36,7 @@ namespace _01_Cafe.App
                         CreateNewMenuItem();
                         break;
                     case "2":
-                       
+                        DeleteMenuItem();
                         break;
                     case "3":
                         break;
@@ -65,7 +65,7 @@ namespace _01_Cafe.App
             Console.WriteLine("Enter the meal name for the menu:");
             newMenu.MealName = Console.ReadLine();
 
-            Console.WriteLine("\nEnter an order number (1-7):\n" +
+            Console.WriteLine("\nPlace your order:\n" +
                 "1.) kids meal\n" +
                 "2.) single meal\n" +
                 "3.) family meal\n" +
@@ -118,8 +118,6 @@ namespace _01_Cafe.App
                 default:
                     Console.WriteLine("Please enter a valid response...");
                     break;
-
-                    
             }
             
             Console.WriteLine("\nEnter in the description for the menu:");
@@ -135,9 +133,39 @@ namespace _01_Cafe.App
             _cafeRepo.AddItemsToMenuList(newMenu);
         }
        
-        private void DeleteItem()
+        private void DeleteMenuItem()
         {
-            //List<Menu> itemlist = _
+            Console.Clear();
+            Console.WriteLine("Enter the item you wish to remove:");
+            List<Menu> itemlist = _cafeRepo.GetEveryItem();
+            int count = 0;
+            foreach(Menu item in itemlist)
+            {
+                count++;
+                Console.WriteLine($"{count} .  {item.MealName}");
+            }
+            int itemProduct = int.Parse(Console.ReadLine());
+            int product = itemProduct - 1;
+            if (product >= 0 && product < itemlist.Count)
+            {
+
+
+                Menu verifiedItem = itemlist[itemProduct];
+                if (_cafeRepo.DeleteMenuList(verifiedItem))
+                {
+                    Console.WriteLine($"{verifiedItem.MealName} successfully removed");
+                }
+                else
+                {
+                    Console.WriteLine("Sorry, unable to remove this product.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No item by that name.");
+            }
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
         private void GetItemList() { }
 

@@ -22,10 +22,6 @@ namespace _02_Cafe.ClassLibrary
             _menuList.Add(menu);
            
         }
-        public void AddIngredientToTheList(Menu ingredient)
-        {
-            _menuList.Add(ingredient);
-        }
 
         public List<Menu> GetEveryItem()
         {
@@ -42,11 +38,6 @@ namespace _02_Cafe.ClassLibrary
                 }
             }
             return null;
-        }
-
-        public void AddAnIngredientToTheList()
-        {
-            //List<ingredient>
         }
 
         public bool DeleteMenuList(Menu itemlist)

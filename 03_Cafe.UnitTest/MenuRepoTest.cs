@@ -11,8 +11,6 @@ namespace _03_Cafe.UnitTest
     {
         private MenuRepo _menuRepo;
         private Menu _items;
-        private Ingredient _ingredients;
-        
        
         [TestInitialize]
         public void IntialStep()
