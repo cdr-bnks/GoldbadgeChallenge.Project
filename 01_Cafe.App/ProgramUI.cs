@@ -10,12 +10,12 @@ namespace _01_Cafe.App
     class ProgramUI
     {
         private MenuRepo _cafeRepo = new MenuRepo();
-        private Ingredient _ingredientRepo = new Ingredient();
-        public void Run()
+       
+        /*public void Run()
         {
             SeedItemList();
             RunMenu();
-        }
+        }*/
         public void RunMenu()
         {
             bool keepRunning = true;
@@ -23,11 +23,10 @@ namespace _01_Cafe.App
             {
                 Console.WriteLine("Select an option on the menu:\n\n" +
                     "1.) Create new menu items:\n" +
-                    "2.) Create new list of Ingredients\n" +
-                    "3.) Delete items:\n" +
-                    "4.) Look at Meal Hours\n" +
-                    "5.) Recieve a list of all items\n " +
-                    "6.) Exit");
+                    "2.) Delete items:\n" +
+                    "3.) Look at Meal Hours\n" +
+                    "4.) Recieve a list of all items\n " +
+                    "5.) Exit");
 
                 string input = Console.ReadLine();
 
@@ -37,16 +36,16 @@ namespace _01_Cafe.App
                         CreateNewMenuItem();
                         break;
                     case "2":
-                        NewListOfIngredient();
+                       
                         break;
                     case "3":
                         break;
                     case "4":
                         break;
                     case "5":
+                        keepRunning = false;
                         break;
                     case "6":
-                        keepRunning = false;
                         break;
                     default:
                         Console.WriteLine("Enter a valid number.");
@@ -61,11 +60,12 @@ namespace _01_Cafe.App
 
         private void CreateNewMenuItem()
         {
+            Console.Clear();
             Menu newMenu = new Menu();
             Console.WriteLine("Enter the meal name for the menu:");
             newMenu.MealName = Console.ReadLine();
 
-            Console.WriteLine("Enter an order number (1-7):\n" +
+            Console.WriteLine("\nEnter an order number (1-7):\n" +
                 "1.) kids meal\n" +
                 "2.) single meal\n" +
                 "3.) family meal\n" +
@@ -121,12 +121,20 @@ namespace _01_Cafe.App
 
                     
             }
+            
+            Console.WriteLine("\nEnter in the description for the menu:");
+            newMenu.Description = Console.ReadLine();
+
+            Console.WriteLine("\nEnter in the List of ingredients:");
+            newMenu.Ingredient = Console.ReadLine();
+
+            Console.WriteLine("\nEnter the Price for the menu:");
+            string mangerPrice = Console.ReadLine();
+            newMenu.Price = double.Parse(mangerPrice);
+            
             _cafeRepo.AddItemsToMenuList(newMenu);
         }
-        private void NewListOfIngredients()
-        {
-
-        }
+       
         private void DeleteItem()
         {
             //List<Menu> itemlist = _

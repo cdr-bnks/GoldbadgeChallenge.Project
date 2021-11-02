@@ -15,7 +15,6 @@ namespace _02_Cafe.ClassLibrary
     public class MenuRepo
     {
         private readonly List<Menu> _menuList = new List<Menu>();
-        private readonly List<Ingredient> _allIngredients = new List<Ingredient>();
         
         public void AddItemsToMenuList (Menu menu)
         {
@@ -23,19 +22,14 @@ namespace _02_Cafe.ClassLibrary
             _menuList.Add(menu);
            
         }
-        public void AddIngredientToMenuList(Ingredient ingredient)
+        public void AddIngredientToTheList(Menu ingredient)
         {
-            _allIngredients.Add(ingredient);
+            _menuList.Add(ingredient);
         }
 
         public List<Menu> GetEveryItem()
         {
             return _menuList;
-        }
-
-        public List<Ingredient> GetEveryIngredient()
-        {
-            return _allIngredients;
         }
 
         public Menu GetMealName(string mealName)
@@ -50,28 +44,9 @@ namespace _02_Cafe.ClassLibrary
             return null;
         }
 
-        public Ingredient GetIngredientName(string nameOfIngredient)
+        public void AddAnIngredientToTheList()
         {
-            foreach (Ingredient item in _allIngredients)
-            {
-                if (item.Spice.ToUpper() == nameOfIngredient.ToUpper())
-                {
-                    return item;
-                }
-                else if(item.Dairy.ToUpper() == nameOfIngredient.ToUpper())
-                {
-                    return item;
-                }
-                else if(item.Vegetable.ToUpper() == nameOfIngredient.ToUpper())
-                {
-                    return item;
-                }
-                else if(item.Meat.ToUpper() == nameOfIngredient.ToUpper())
-                {
-                    return item;
-                }
-            }
-            return null;
+            //List<ingredient>
         }
 
         public bool DeleteMenuList(Menu itemlist)
@@ -79,7 +54,5 @@ namespace _02_Cafe.ClassLibrary
           bool deleteList = _menuList.Remove(itemlist);
             return deleteList;
         }
-
-       
     }
 }

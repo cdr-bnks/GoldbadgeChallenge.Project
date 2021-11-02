@@ -11,7 +11,6 @@ namespace _03_Cafe.UnitTest
     {
         private MenuRepo _menuRepo;
         private Menu _items;
-        private List<Ingredient> _ingredientRepo;
         private Ingredient _ingredients;
         
        
@@ -19,13 +18,10 @@ namespace _03_Cafe.UnitTest
         public void IntialStep()
         {
             _menuRepo = new MenuRepo();
-            _ingredientRepo = new List<Ingredient>();
-            _ingredients = new Ingredient("black pepper", "celery", "turkey", "milk");
-            
 
-            _items = new Menu("Kids special", MealType.kids_meal, "Fresh fruits, Organic deli meat, milk or water and pastries", _ingredientRepo, 5.78);
+            _items = new Menu("Kids special", MealType.kids_meal, "Fresh fruits, Organic deli meat, milk or water and pastries", "black pepper, celery turkey and milk", 5.78);
 
-            _menuRepo.AddItemsToMenuList(_items, _ingredients);
+            _menuRepo.AddItemsToMenuList(_items);
 
         }
         [TestMethod]
@@ -33,10 +29,9 @@ namespace _03_Cafe.UnitTest
         {
             Menu item = new Menu();
             item.MealName = "Kids Special";
-            Ingredient ingredientItem = new Ingredient();
-            ingredientItem.Spice = "Black Pepper";
+           
             MenuRepo repo = new MenuRepo();
-            repo.AddItemsToMenuList(item, ingredientItem);
+            repo.AddItemsToMenuList(item);
             Menu itemFromDirectory = repo.GetMealName("Kids Special");
 
             Assert.IsNotNull(itemFromDirectory);

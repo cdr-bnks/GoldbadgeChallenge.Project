@@ -28,7 +28,7 @@ namespace _02_Cafe.ClassLibrary
         public MealType TypeOfMeal { get; set; }
         public string MealName { get; set; }
         public string Description { get; set; }
-        public List<Ingredient> Ingredient { get; set; }
+        public string Ingredient { get; set; }
         public double Price { get; set; }
         public string MealTime
         {
@@ -78,32 +78,13 @@ namespace _02_Cafe.ClassLibrary
 
         public Menu() { }
 
-        public Menu(string mealName, MealType mealNumber, string description, List<Ingredient> ingredient, double price)
+        public Menu(string mealName, MealType mealNumber, string description, string ingredient, double price)
         {
             MealName = mealName;
             TypeOfMeal = mealNumber;
             Description = description;
             Ingredient = ingredient;
             Price = price;
-        }
-
-    }
-
-    public class Ingredient
-    {
-        public string Spice { get; set; }
-        public string Vegetable { get; set; }
-        public string Meat { get; set; }
-        public string Dairy { get; set; }
-
-
-        public Ingredient() { }
-        public Ingredient(string spice, string vegetable, string meat, string dairy)
-        {
-            Spice = spice;
-            Vegetable = vegetable;
-            Meat = meat;
-            Dairy = dairy;
         }
     }
 }
