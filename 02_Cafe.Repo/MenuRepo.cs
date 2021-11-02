@@ -17,11 +17,15 @@ namespace _02_Cafe.ClassLibrary
         private readonly List<Menu> _menuList = new List<Menu>();
         private readonly List<Ingredient> _allIngredients = new List<Ingredient>();
         
-        public void AddItemsToMenuList (Menu menu, Ingredient ingredients)
+        public void AddItemsToMenuList (Menu menu)
         {
             
             _menuList.Add(menu);
-            _allIngredients.Add(ingredients);
+           
+        }
+        public void AddIngredientToMenuList(Ingredient ingredient)
+        {
+            _allIngredients.Add(ingredient);
         }
 
         public List<Menu> GetEveryItem()
