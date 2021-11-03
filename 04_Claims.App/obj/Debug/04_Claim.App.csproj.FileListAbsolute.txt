@@ -1,0 +1,10 @@
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\04_Claims.App\bin\Debug\04_Claims.App.exe.config
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\04_Claims.App\bin\Debug\04_Claims.App.exe
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\04_Claims.App\bin\Debug\04_Claims.App.pdb
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\04_Claims.App\bin\Debug\05_Claims.Repo.dll
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\04_Claims.App\bin\Debug\05_Claims.Repo.pdb
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\04_Claims.App\obj\Debug\04_Claim.App.csproj.AssemblyReference.cache
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\04_Claims.App\obj\Debug\04_Claim.App.csproj.CoreCompileInputs.cache
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\04_Claims.App\obj\Debug\04_Claim.App.csproj.CopyComplete
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\04_Claims.App\obj\Debug\04_Claims.App.exe
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\04_Claims.App\obj\Debug\04_Claims.App.pdb

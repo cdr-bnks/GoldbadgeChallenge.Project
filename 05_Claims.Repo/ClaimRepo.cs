@@ -16,6 +16,27 @@ namespace _05_Claims.Repo
             return _claimDirectory;
         }
         //Take care of next claim
+        // Use Peek
+        public bool MoveToAnotherClaim(string previousclaim, Claim nextClaim)
+        {
+            Claim formerClaim = GetClaimByID(previousclaim.Length);
+                
+            if(formerClaim != null)
+            {
+                formerClaim.ClaimID = nextClaim.ClaimID;
+                formerClaim.ClaimType = nextClaim.ClaimType;
+                formerClaim.Description = nextClaim.Description;
+                formerClaim.ClaimAmount = nextClaim.ClaimAmount;
+                formerClaim.DateOfIncident = nextClaim.DateOfIncident;
+                formerClaim.DateOfClaim = nextClaim.DateOfClaim;
+                formerClaim.IsValid = nextClaim.IsValid;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         //Enter a new claim
         public void AddClaimToList(Claim data)
@@ -23,5 +44,16 @@ namespace _05_Claims.Repo
             _claimDirectory.Enqueue(data);
         }
 
+        public  Claim GetClaimByID(int id)
+        {
+            foreach(Claim data in _claimDirectory)
+            {
+                if(data.ClaimID.ToString() == id.ToString())
+                {
+                    return data;
+                }
+            }
+            return null;
+        }
     }
 }
