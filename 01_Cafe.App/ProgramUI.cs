@@ -9,8 +9,8 @@ namespace _01_Cafe.App
 {
     class ProgramUI
     {
-        private MenuRepo _cafeRepo = new MenuRepo();
-       
+        private readonly MenuRepo _cafeRepo = new MenuRepo();
+
         /*public void Run()
         {
             SeedItemList();
@@ -24,9 +24,9 @@ namespace _01_Cafe.App
                 Console.WriteLine("Select an option on the menu:\n\n" +
                     "1.) Create new menu items:\n" +
                     "2.) Delete items:\n" +
-                    "3.) Look at Meal Hours\n" +
-                    "4.) Recieve a list of all items\n " +
-                    "5.) Exit");
+                    "3.) Display all menu items:\n" +
+                    "4.) Look at Meal Hours:\n" +
+                    "6.) Exit");
 
                 string input = Console.ReadLine();
 
@@ -39,16 +39,16 @@ namespace _01_Cafe.App
                         DeleteMenuItem();
                         break;
                     case "3":
+                        DisplayEachMenuItem();
                         break;
                     case "4":
+                        CafeEateryHour();
                         break;
                     case "5":
                         keepRunning = false;
                         break;
-                    case "6":
-                        break;
                     default:
-                        Console.WriteLine("Enter a valid number.");
+                        Console.WriteLine("Enter a valid number between 1-6.");
                         break;
                 }
                 Console.WriteLine("Press any key to contiue...");
@@ -82,9 +82,9 @@ namespace _01_Cafe.App
             }
             catch
             {
-                Console.WriteLine("Select a valid number between (1-7)");
+                Console.WriteLine("Please proceed..");
             }
-            
+
             switch (mealAsWord.ToUpper())
             {
                 case "1":
@@ -119,7 +119,7 @@ namespace _01_Cafe.App
                     Console.WriteLine("Please enter a valid response...");
                     break;
             }
-            
+
             Console.WriteLine("\nEnter in the description for the menu:");
             newMenu.Description = Console.ReadLine();
 
@@ -129,45 +129,46 @@ namespace _01_Cafe.App
             Console.WriteLine("\nEnter the Price for the menu:");
             string mangerPrice = Console.ReadLine();
             newMenu.Price = double.Parse(mangerPrice);
-            
+
             _cafeRepo.AddItemsToMenuList(newMenu);
         }
-       
+
         private void DeleteMenuItem()
         {
-            Console.Clear();
-            Console.WriteLine("Enter the item you wish to remove:");
-            List<Menu> itemlist = _cafeRepo.GetEveryItem();
-            int count = 0;
-            foreach(Menu item in itemlist)
-            {
-                count++;
-                Console.WriteLine($"{count} .  {item.MealName}");
-            }
-            int itemProduct = int.Parse(Console.ReadLine());
-            int product = itemProduct - 1;
-            if (product >= 0 && product < itemlist.Count)
-            {
+            DisplayEachMenuItem();
 
+            Console.WriteLine("\n Enter the Item from the menu you'd want to remove:");
 
-                Menu verifiedItem = itemlist[itemProduct];
-                if (_cafeRepo.DeleteMenuList(verifiedItem))
-                {
-                    Console.WriteLine($"{verifiedItem.MealName} successfully removed");
-                }
-                else
-                {
-                    Console.WriteLine("Sorry, unable to remove this product.");
-                }
+            string managerInput = Console.ReadLine();
+            bool wasRemoved = _cafeRepo.DeleteMenuList(managerInput);
+            if(wasRemoved)
+            {
+                Console.WriteLine("The item was successfully removed.");
             }
             else
             {
-                Console.WriteLine("No item by that name.");
+                Console.WriteLine("The content was not removed properly.");
             }
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
         }
-        private void GetItemList() { }
+        private void DisplayEachMenuItem()
+        {
+
+            Console.Clear();
+            List<Menu> itemlist = _cafeRepo.GetEveryItem();
+            foreach (Menu item in itemlist)
+            {
+                Console.WriteLine($"Meal Name: {item.MealName}\n" +
+                    $"Description: {item.Description}\n" +
+                    $"Ingredients: {item.Ingredient}\n" +
+                    $"Price: {item.Price}");
+            }
+        }
+        private void CafeEateryHour()
+        {
+            
+           
+
+        }
 
 
         private void SeedItemList() { }

@@ -15,12 +15,13 @@ namespace _02_Cafe.ClassLibrary
     public class MenuRepo
     {
         private readonly List<Menu> _menuList = new List<Menu>();
-        
-        public void AddItemsToMenuList (Menu menu)
+        private readonly DateTime _mealTime = new DateTime();
+
+        public void AddItemsToMenuList(Menu menu)
         {
-            
+
             _menuList.Add(menu);
-           
+
         }
 
         public List<Menu> GetEveryItem()
@@ -30,9 +31,9 @@ namespace _02_Cafe.ClassLibrary
 
         public Menu GetMealName(string mealName)
         {
-            foreach(Menu item in _menuList)
+            foreach (Menu item in _menuList)
             {
-                if(item.MealName.ToUpper() == mealName.ToUpper())
+                if (item.MealName.ToUpper() == mealName.ToUpper())
                 {
                     return item;
                 }
@@ -40,10 +41,31 @@ namespace _02_Cafe.ClassLibrary
             return null;
         }
 
-        public bool DeleteMenuList(Menu itemlist)
+        public bool DeleteMenuList(string mealName)
         {
-          bool deleteList = _menuList.Remove(itemlist);
-            return deleteList;
+            Menu item = GetMealName(mealName);
+            
+            if(item == null)
+            {
+                return false;
+            }
+
+            int initialCount = _menuList.Count;
+            _menuList.Remove(item);
+
+            if(initialCount > _menuList.Count)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void CafeHours(string mealTime)
+        {
+            return _mealTime.AddHours;
         }
     }
 }

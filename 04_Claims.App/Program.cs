@@ -10,6 +10,8 @@ namespace _04_Claims.App
     {
         static void Main(string[] args)
         {
+            ProgramUI claimApp = new ProgramUI();
+            claimApp.Menu();
         }
     }
 }

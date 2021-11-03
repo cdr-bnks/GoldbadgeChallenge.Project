@@ -23,6 +23,7 @@ namespace _02_Cafe.ClassLibrary
         extra_meat,
         extra_sides
     }
+
     public class Menu
     {
         public MealType TypeOfMeal { get; set; }
@@ -34,8 +35,8 @@ namespace _02_Cafe.ClassLibrary
         {
             get
             {
-                string today = DateTime.Now.ToString("HH:mm:tt");
-                switch (today)
+                string cafeHours = DateTime.Now.ToString("HH:mm:tt");
+                switch (cafeHours)
                 {
                     case "08:00:":
                     case "11:30:":
@@ -49,30 +50,8 @@ namespace _02_Cafe.ClassLibrary
                     case "18:00":
                     case "22:30":
                         return "Dinner";
-
                 }
                 return null;
-            }
-        }
-        public bool MealValue
-        {
-            get
-            {
-
-
-
-                switch (TypeOfMeal)
-                {
-                    case MealType.kids_meal:
-                    case MealType.single_meal:
-                    case MealType.family_meal:
-                    case MealType.a_la_carte:
-                    case MealType.extra_veggie:
-                    case MealType.extra_meat:
-                    case MealType.extra_sides:
-                    default:
-                        return false;
-                }
             }
         }
 

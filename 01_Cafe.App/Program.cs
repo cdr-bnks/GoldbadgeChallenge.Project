@@ -11,7 +11,7 @@ namespace _01_Cafe.App
         static void Main(string[] args)
         {
             ProgramUI menuApp = new ProgramUI();
-            menuApp.Run();
+            menuApp.RunMenu();
         }
     }
 }

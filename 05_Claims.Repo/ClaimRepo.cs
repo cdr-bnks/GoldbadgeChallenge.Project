@@ -18,6 +18,10 @@ namespace _05_Claims.Repo
         //Take care of next claim
 
         //Enter a new claim
-        
+        public void AddClaimToList(Claim data)
+        {
+            _claimDirectory.Enqueue(data);
+        }
+
     }
 }
