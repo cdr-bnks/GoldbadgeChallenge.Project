@@ -31,39 +31,18 @@ namespace _02_Cafe.ClassLibrary
         public string Description { get; set; }
         public string Ingredient { get; set; }
         public double Price { get; set; }
-        public string MealTime
-        {
-            get
-            {
-                string cafeHours = DateTime.Now.ToString("HH:mm:tt");
-                switch (cafeHours)
-                {
-                    case "08:00:":
-                    case "11:30:":
-                        return "Breakfast";
-                    case "12:00:":
-                    case "14:30":
-                        return "HappyHour";
-                    case "15:00":
-                    case "17:30":
-                        return "Lunch";
-                    case "18:00":
-                    case "22:30":
-                        return "Dinner";
-                }
-                return null;
-            }
-        }
+        public DateTime MealTime { get; set; }
 
         public Menu() { }
 
-        public Menu(string mealName, MealType mealNumber, string description, string ingredient, double price)
+        public Menu(string mealName, MealType mealNumber, string description, string ingredient, double price, DateTime mealTime)
         {
             MealName = mealName;
             TypeOfMeal = mealNumber;
             Description = description;
             Ingredient = ingredient;
             Price = price;
+            MealTime = mealTime;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _08_Badge.ClassLibrary
 {
-    class Badge
+   public class Badge
     {
         public int BadgeID { get; set; }
         public string ListEachDoorName { get; set; }

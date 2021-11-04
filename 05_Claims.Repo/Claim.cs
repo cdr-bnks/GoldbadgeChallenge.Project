@@ -20,13 +20,13 @@ namespace _05_Claims.Repo
         public ClaimType ClaimType { get; set; }
         public  string Description { get; set; }
         public  double ClaimAmount { get; set; }
-        public  string DateOfIncident { get; set; }
-        public  string DateOfClaim { get; set; }
+        public  DateTime DateOfIncident { get; set; }
+        public  DateTime DateOfClaim { get; set; }
         public  bool  IsValid { get; set; } //30 days else not valid.
 
         public Claim() { }
 
-        public Claim(int claimID, ClaimType claimType, string description, double claimAmount, string dateOfIncident, string dateOfClaim, bool isValid)
+        public Claim(int claimID, ClaimType claimType, string description, double claimAmount, DateTime dateOfIncident, DateTime dateOfClaim, bool isValid)
         {
             ClaimID = claimID;
             ClaimType = claimType;
