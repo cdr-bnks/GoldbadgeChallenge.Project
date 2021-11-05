@@ -1,6 +1,6 @@
 C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\05_Claims.Repo\bin\Debug\05_Claims.Repo.dll
 C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\05_Claims.Repo\bin\Debug\05_Claims.Repo.pdb
-C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\05_Claims.Repo\obj\Debug\05_Claim.ClassLibrary.csproj.AssemblyReference.cache
 C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\05_Claims.Repo\obj\Debug\05_Claim.ClassLibrary.csproj.CoreCompileInputs.cache
 C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\05_Claims.Repo\obj\Debug\05_Claims.Repo.dll
 C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\05_Claims.Repo\obj\Debug\05_Claims.Repo.pdb
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\05_Claims.Repo\obj\Debug\05_Claim.ClassLibrary.csproj.AssemblyReference.cache

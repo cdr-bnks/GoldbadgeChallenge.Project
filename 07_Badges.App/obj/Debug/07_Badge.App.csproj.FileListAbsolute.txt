@@ -1,0 +1,10 @@
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\07_Badges.App\bin\Debug\07_Badges.App.exe.config
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\07_Badges.App\bin\Debug\07_Badges.App.exe
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\07_Badges.App\bin\Debug\07_Badges.App.pdb
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\07_Badges.App\bin\Debug\08_Badges.Repo.dll
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\07_Badges.App\bin\Debug\08_Badges.Repo.pdb
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\07_Badges.App\obj\Debug\07_Badge.App.csproj.AssemblyReference.cache
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\07_Badges.App\obj\Debug\07_Badge.App.csproj.CoreCompileInputs.cache
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\07_Badges.App\obj\Debug\07_Badge.App.csproj.CopyComplete
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\07_Badges.App\obj\Debug\07_Badges.App.exe
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\07_Badges.App\obj\Debug\07_Badges.App.pdb

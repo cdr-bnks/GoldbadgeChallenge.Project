@@ -11,6 +11,11 @@ namespace _04_Claims.App
     {
         private readonly ClaimRepo _claimRepository = new ClaimRepo();
 
+        public void Run()
+        {
+            SeedClaimList();
+            Menu();
+        }
         public void Menu()
         {
             bool keepRunning = true;
@@ -45,40 +50,49 @@ namespace _04_Claims.App
                 Console.Clear();
             }
         }
-        // use Lambda to check and see if it is contained Valid date
+
         private void ProcureAllClaims()
         {
             Console.Clear();
-            Queue<Claim> claimData = _claimRepository.SeeEveryClaim();
-            Claim index = claimData.Peek();
-            foreach (Claim state in claimData)
+            Queue<Claim> claimlog = _claimRepository.SeeEveryClaim();
+            Console.WriteLine("Claim ID:\t Type:\t Description:\t Amount:\t Date of Accident:\t Date of Claim:\t Valid");
+            foreach (Claim claim in claimlog)
             {
-                int claimID = 0;
-                claimID++;
-                Console.WriteLine($"Claim ID: {state.ClaimID}\t" +
-                    $"Type: {state.ClaimType}\t" +
-                    $"Description: {state.Description}\t" +
-                    $"Amount: {state.ClaimAmount}\t" +
-                    $"Date of Incident: {state.DateOfIncident}\t" +
-                    $"Date of Claim: { state.DateOfClaim}\t" +
-                    $"Is procured claim valid: {state.IsValid}\t" +
-                    $"Do you want to take this claim? (y/n)");
-                if(index.DateOfClaim >= state.DateOfIncident)
-                {
-                    for(int c = 0; c < 30; c++)
-                    {
-                        Console.WriteLine(claimID);
-                    }
-                    bool 
-                    
-                }
-               
+                Console.WriteLine($"{claim.ClaimID}\t" +
+                    $"{claim.ClaimType}\t" +
+                    $"{claim.Description}\t" +
+                    $"{claim.ClaimAmount}\t" +
+                    $"{claim.DateOfIncident.ToShortDateString()}\t" +
+                    $"{claim.DateOfIncident.ToShortDateString()}\t" +
+                    $"{claim.IsValid}");
             }
+            
         }
 
         private void ProceedWithNextClaim()
         {
+            Console.Clear();
+            Claim nextCLaim = _claimRepository.PeekAtClaim();
 
+            Console.WriteLine($"{nextCLaim.ClaimID}\n" +
+                $"{nextCLaim.ClaimType}\n" +
+                $"{nextCLaim.Description}\n" +
+                $"{nextCLaim.ClaimAmount}\n" +
+                $"{nextCLaim.DateOfIncident}\n" +
+                $"{nextCLaim.DateOfClaim}\n" +
+                $"{nextCLaim.IsValid}");
+
+            Console.WriteLine("Do you want to deal with this claim?: (y/n)");
+
+              string input= Console.ReadLine().ToLower();
+            if(input == "y")
+            {
+                Queue<Claim> claim = _claimRepository.SeeEveryClaim();
+                claim.Dequeue();
+                Console.WriteLine("You're claim has been successfully removed.");
+            }
+            Console.WriteLine("Press any key to return to the menu...");
+            Console.ReadKey();
         }
 
         private void AddNewClaim()
@@ -108,9 +122,32 @@ namespace _04_Claims.App
                 "4.) Home:\n" +
                 "5.) Theft:\n");
             string claim = Console.ReadLine();
-          //switch case
-            //figure out a way to dislpay the ClaimType enums:
-           
+            switch (claim.ToLower())
+            {
+                case "1":
+                case "medical":
+                    nextClaim.ClaimType = ClaimType.Medical;
+                    break;
+                case "2":
+                case "insurance":
+                    nextClaim.ClaimType = ClaimType.Insurance;
+                    break;
+                case "3":
+                case "auto":
+                    nextClaim.ClaimType = ClaimType.Auto;
+                    break;
+                case "4":
+                case "home":
+                    nextClaim.ClaimType = ClaimType.Home;
+                    break;
+                case "5":
+                case "theft":
+                    nextClaim.ClaimType = ClaimType.Theft;
+                    break;
+                default:
+                    Console.WriteLine("Please press Number or claim type you see on the screen");
+                    break;
+            }
 
             Console.WriteLine("Enter the description for the claim:");
             nextClaim.Description = Console.ReadLine();
@@ -118,6 +155,7 @@ namespace _04_Claims.App
             Console.WriteLine("Enter the Amount of Damage:");
             string claimAmount = Console.ReadLine();
             nextClaim.ClaimAmount = double.Parse(claimAmount);
+            
 
             Console.WriteLine($"Enter Date of Accident in this format:{DateTime.Now.ToString("d")}");
             nextClaim.DateOfIncident = DateTime.Parse(Console.ReadLine());
@@ -126,41 +164,34 @@ namespace _04_Claims.App
             Console.WriteLine($"Enter Date of claim in this exact format:{DateTime.Now.ToString("d")}");
             nextClaim.DateOfClaim = DateTime.Parse(Console.ReadLine());
 
-            Console.WriteLine("Is the following claim valid?:\n" +
-                "Enter (Y/N):");
-            string claiminput = Console.ReadLine().ToLower();
-            if(claiminput == "y")
-            {
-                nextClaim.IsValid = true;
-            }
-            else
-            {
-                nextClaim.IsValid = false;
-            }
+            _claimRepository.AddClaimToList(nextClaim);
 
             Queue<Claim> claimData = _claimRepository.SeeEveryClaim();
-            foreach (Claim state in claimData)
+            foreach (Claim claimNum in claimData)
             {
-                Console.WriteLine($"Claim ID: {state.ClaimID}\t" +
-                    $"Type: {state.ClaimType}\t" +
-                    $"Description: {state.Description}\t" +
-                    $"Amount: {state.ClaimAmount}\t" +
-                    $"Date of Incident: {state.DateOfIncident}\t" +
-                    $"Date of Claim: { state.DateOfClaim}\t" +
-                    $"Is procured claim valid: {state.IsValid}\t" +
-                    $"Do you want to take this claim? (y/n)");
+                Console.WriteLine($"{claimNum.ClaimID}\t" +
+                    $"{claimNum.ClaimType}\t" +
+                    $"{claimNum.Description}\t" +
+                    $"{claimNum.ClaimAmount}\t" +
+                    $"{claimNum.DateOfIncident.ToShortDateString()}\t" +
+                    $"{claimNum.DateOfIncident.ToShortDateString()}\t" +
+                    $"{claimNum.IsValid}");
             }
 
-            _claimRepository.AddClaimToList(nextClaim);
         }
 
-        private void SeedClaimList()
+            private void SeedClaimList()
         {
             Console.Clear();
-            Claim newClaimIndex = new Claim(1, ClaimType.Auto, "Car accident on 465.", 400.00, DateTime.Parse("4/25/18"), DateTime.Parse("4/27/18"),true);
-            Claim newClaimIndex1 = new Claim(2, ClaimType.Home, "House Fire kitchen.", 4000.00, DateTime.Parse("4/11/18"), DateTime.Parse("4/12/18"),true);
-            Claim newClaimIndex2 = new Claim(3, ClaimType.Theft, "Stolen Pancakes.", 4.00, DateTime.Parse("4/27/18"), DateTime.Parse("6/01/18"),false);
-            Claim newClaimIndex3 = new Claim(4, ClaimType.Medical, "Fractured wrist from typing so much.", 77.00, DateTime.Parse("2/12/18"), DateTime.Parse("7/01/18"),false);
+            Claim newClaimIndex = new Claim(1, ClaimType.Auto, "Car accident on 465.", 400.00, DateTime.Parse("4/25/18"), DateTime.Parse("4/27/18"));
+            Claim newClaimIndex1 = new Claim(2, ClaimType.Home, "House Fire kitchen.", 4000.00, DateTime.Parse("4/11/18"), DateTime.Parse("4/12/18"));
+            Claim newClaimIndex2 = new Claim(3, ClaimType.Theft, "Stolen Pancakes.", 4.00, DateTime.Parse("4/27/18"), DateTime.Parse("6/01/18"));
+            Claim newClaimIndex3 = new Claim(4, ClaimType.Medical, "Fractured wrist from typing so much.", 77.00, DateTime.Parse("2/12/18"), DateTime.Parse("7/01/18"));
+
+            _claimRepository.AddClaimToList(newClaimIndex);
+            _claimRepository.AddClaimToList(newClaimIndex1);
+            _claimRepository.AddClaimToList(newClaimIndex2);
+            _claimRepository.AddClaimToList(newClaimIndex3);
         }
 
     }

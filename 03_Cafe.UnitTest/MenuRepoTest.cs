@@ -17,7 +17,7 @@ namespace _03_Cafe.UnitTest
         {
             _menuRepo = new MenuRepo();
 
-            _items = new Menu("Kids special", MealType.kids_meal, "Fresh fruits, Organic deli meat, milk or water and pastries", "black pepper, celery turkey and milk", 5.78);
+            _items = new Menu("Kids special", MealType.kids_meal, "Fresh fruits, Organic deli meat, milk or water and pastries", "black pepper, celery turkey and milk", 5.78, DateTime.Parse("HH:mm:tt"));
 
             _menuRepo.AddItemsToMenuList(_items);
 

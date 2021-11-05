@@ -8,37 +8,29 @@ namespace _08_Badge.ClassLibrary
 {
     public class BadgeRepo
     {
-        protected readonly Dictionary<int, Badge> _badgeDirectory = new Dictionary<int, Badge>();
+        private Dictionary<int, string> _badgeDirectory = new Dictionary<int, string>();
 
-        public bool AddBadgeToDirectory(Badge badge)
-        {
-            int badgeNum = _badgeDirectory.Count;
-            _badgeDirectory.Add(badgeNum, badge);
-            bool badgeAdded = _badgeDirectory.Count > badgeNum ? true : false;
-            return badgeAdded;
-        }
-
-        public Dictionary<int, Badge> GetEachBadge()
+        public Dictionary<int, string> GetDictonary()
         {
             return _badgeDirectory;
         }
-        public bool GetBadgeID()
+
+        public void AddBadge(int badge, string accessedDoors)
         {
-            int key = _badgeDirectory.Count;
-            if (_badgeDirectory.ContainsKey(key))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            _badgeDirectory.Add(badge, accessedDoors);
         }
 
-        public bool RemoveExistingBadge(Badge existingBadge)
+        public bool AddingDoorToBadge(Badge badge, string )
         {
-            bool badgeRemoved = _badgeDirectory.Remove(existingBadge.BadgeID);
-            return badgeRemoved;
+            string doors = _badgeDirectory[badge];
+             doors.Length.
+            
+        }
+
+        public void RemoveDoorEntry(int badgeid, string doorAccess)
+        {
+            Badge doors = _badgeDirectory[badgeid];
+            doors.Remove(doorAccess);
         }
     }
 }

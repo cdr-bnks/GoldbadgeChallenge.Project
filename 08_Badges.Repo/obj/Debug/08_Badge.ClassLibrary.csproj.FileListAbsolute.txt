@@ -1,0 +1,5 @@
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\08_Badges.Repo\bin\Debug\08_Badges.Repo.dll
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\08_Badges.Repo\bin\Debug\08_Badges.Repo.pdb
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\08_Badges.Repo\obj\Debug\08_Badge.ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\08_Badges.Repo\obj\Debug\08_Badges.Repo.dll
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\08_Badges.Repo\obj\Debug\08_Badges.Repo.pdb

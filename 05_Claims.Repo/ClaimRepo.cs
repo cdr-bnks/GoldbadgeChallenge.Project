@@ -9,14 +9,11 @@ namespace _05_Claims.Repo
     public class ClaimRepo
     {
         private readonly Queue<Claim> _claimDirectory = new Queue<Claim>();
-        
-       //See all claims:
-       public Queue<Claim> SeeEveryClaim()
+
+        public Queue<Claim> SeeEveryClaim()
         {
             return _claimDirectory;
         }
-        //Take care of next claim
-        // Use Peek
         public bool MoveToAnotherClaim(string previousclaim, Claim nextClaim)
         {
             Claim formerClaim = GetClaimByID(previousclaim.Length);
@@ -29,7 +26,6 @@ namespace _05_Claims.Repo
                 formerClaim.ClaimAmount = nextClaim.ClaimAmount;
                 formerClaim.DateOfIncident = nextClaim.DateOfIncident;
                 formerClaim.DateOfClaim = nextClaim.DateOfClaim;
-                formerClaim.IsValid = nextClaim.IsValid;
                 return true;
             }
             else
@@ -38,7 +34,6 @@ namespace _05_Claims.Repo
             }
         }
 
-        //Enter a new claim
         public void AddClaimToList(Claim data)
         {
             _claimDirectory.Enqueue(data);
@@ -55,5 +50,11 @@ namespace _05_Claims.Repo
             }
             return null;
         }
+
+        public Claim PeekAtClaim()
+        {
+           return _claimDirectory.Peek();
+        }
+
     }
 }

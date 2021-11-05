@@ -1,0 +1,16 @@
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\bin\Debug\09_Badges.UnitTest.dll
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\bin\Debug\09_Badges.UnitTest.pdb
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\bin\Debug\08_Badges.Repo.dll
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\bin\Debug\08_Badges.Repo.pdb
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\obj\Debug\09_Badge.UnitTest.csproj.AssemblyReference.cache
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\obj\Debug\09_Badge.UnitTest.csproj.CoreCompileInputs.cache
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\obj\Debug\09_Badge.UnitTest.csproj.CopyComplete
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\obj\Debug\09_Badges.UnitTest.dll
+C:\Users\Owner\source\repos\GoldbadgeChallenge.Project\09_Badges.UnitTest\obj\Debug\09_Badges.UnitTest.pdb
