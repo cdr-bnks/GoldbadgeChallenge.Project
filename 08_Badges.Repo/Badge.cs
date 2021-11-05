@@ -9,12 +9,12 @@ namespace _08_Badge.ClassLibrary
    public class Badge
     {
         public int BadgeID { get; set; }
-        public string ListEachDoorName { get; set; }
+        public List<string> ListEachDoorName { get; set; }
         public string BadgeName { get; set; }
 
         public Badge() { }
 
-        public Badge(int badgeID, string listEachDoorName, string badgeName)
+        public Badge(int badgeID,List<string> listEachDoorName, string badgeName)
         {
             BadgeID = badgeID;
             ListEachDoorName = listEachDoorName;

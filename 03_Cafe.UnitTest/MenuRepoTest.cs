@@ -5,13 +5,12 @@ using System.Collections.Generic;
 
 namespace _03_Cafe.UnitTest
 {
-    //Create a Test Class for your repository methods. (You don't need to test your constructors or objects, just your methods)
     [TestClass]
     public class MenuRepoTest
     {
         private MenuRepo _menuRepo;
         private Menu _items;
-       
+
         [TestInitialize]
         public void IntialStep()
         {
@@ -27,7 +26,7 @@ namespace _03_Cafe.UnitTest
         {
             Menu item = new Menu();
             item.MealName = "Kids Special";
-           
+
             MenuRepo repo = new MenuRepo();
             repo.AddItemsToMenuList(item);
             Menu itemFromDirectory = repo.GetMealName("Kids Special");
@@ -35,5 +34,21 @@ namespace _03_Cafe.UnitTest
             Assert.IsNotNull(itemFromDirectory);
 
         }
+
+        [TestMethod]
+        public void GetMealName_ShouldNotReturnNull()
+        {
+            Menu  
+        }
+
+
+
+
+        [TestMethod]
+        public void DeletMenuList_ShouldReturnTrue()
+        {
+
+        }
     }
 }
+
