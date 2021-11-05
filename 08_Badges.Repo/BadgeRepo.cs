@@ -8,6 +8,7 @@ namespace _08_Badge.ClassLibrary
 {
     public class BadgeRepo
     {
+        private readonly List<string> _doorNames = new List<string>();
         private Dictionary<int, List<string>> _badgeDirectory = new Dictionary<int, List<string>>();
 
         public Dictionary<int, List<string>> GetlistFromDirectory()
@@ -31,6 +32,20 @@ namespace _08_Badge.ClassLibrary
             List<string> doors = _badgeDirectory[badgeid];
             doors.Remove(accessedDoor);
         }
+
+        public KeyValuePair<int, List<string>> GetBadgeID(int badgeID)
+        {
+            foreach (KeyValuePair<int, List<string>> badge in _badgeDirectory)
+            {
+                if (badge.Key == badgeID)
+                {
+                    return badge;
+                }
+            }
+            return default;
+        }
+
+
     }
 }
 

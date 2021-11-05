@@ -38,7 +38,7 @@ namespace _03_Cafe.UnitTest
         [TestMethod]
         public void GetMealName_ShouldNotReturnNull()
         {
-            Menu  
+            //Menu  
         }
 
 

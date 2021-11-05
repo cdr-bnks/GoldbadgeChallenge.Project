@@ -85,7 +85,7 @@ namespace _07_Badges.App
             badge.BadgeID = int.Parse(Console.ReadLine());
 
             Console.Clear();
-            Console.WriteLine($"What is the BadgeNumber You would like to updeat{content.BadgeID}\n" +
+            Console.WriteLine($"What is the BadgeNumber You would like to updeat{badge.BadgeID}\n" +
                 $"\n" +
                 $"1. Add a door\n" +
                 $"2. Remove a door\n" +
@@ -96,17 +96,62 @@ namespace _07_Badges.App
             switch (userInput)
             {
                 case "1":
-                    //Add a door
-                    AddDoorToEdit(content.BadgeID);
+                    
+                    AddDoorToEdit(badge.BadgeID);
                     break;
                 case "2":
-                    //Remove a door
-                    RemoveDoorFromEdit(content.BadgeID);
+                    
+                    RemoveDoorFromEdit(badge.BadgeID);
                     break;
                 case "3":
-                    RunMenu();
+                    Menu();
                     break;
             }
+        }
+
+        public void AddDoorToEdit(int badgeid)
+        {
+            Console.WriteLine("Enter a door to add:");
+            string accessedDoor = Console.ReadLine();
+            _badgeRepository.AddingDoorToBadge(badgeid, accessedDoor);
+
+            Console.WriteLine("Door access has been added!");
+           
+
+            Console.ReadKey();
+
+        }
+
+        public void RemoveDoorFromEdit(int badgeid)
+        {
+            Console.WriteLine("Enter a door that you would like to remove:");
+            string accessedDoor = Console.ReadLine();
+            _badgeRepository.RemoveDoorEntry(badgeid, accessedDoor);
+
+            Console.WriteLine("Door access has been revoked!");
+            Console.WriteLine("Press any key to continue...");
+
+            Console.ReadKey();
+        }
+
+        public void ListDoors()
+        {
+            Dictionary<int, List<string>> badge _badgeRepository.
+
+            Console.WriteLine("=============");
+            foreach (KeyValuePair<int, List<string>> badge in BadgeList)
+            {
+                Console.WriteLine($"Badge: {badge.Key}");
+
+                foreach (string door in badge.Value)
+                {
+                    Console.WriteLine(door);
+                }
+                Console.WriteLine("=============");
+            }
+            Console.WriteLine("\nPress any key to return to the menu...");
+            Console.ReadLine();
+
         }
         private void SeedBadgeList()
         {
