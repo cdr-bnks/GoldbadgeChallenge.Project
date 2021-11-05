@@ -36,9 +36,16 @@ namespace _03_Cafe.UnitTest
         }
 
         [TestMethod]
-        public void GetMealName_ShouldNotReturnNull()
+        public void GetMealName_ShouldReturnName()
         {
-            //Menu  
+            Menu menu = new Menu();
+            menu.MealName = "Turkey";
+
+            MenuRepo repo = new MenuRepo();
+            repo.GetMealName(menu.ToString());
+            Menu menuFromDirectory = repo.GetMealName("Turkey");
+
+            Assert.IsNotNull(menuFromDirectory);
         }
 
 
